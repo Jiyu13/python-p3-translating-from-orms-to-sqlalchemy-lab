@@ -6,4 +6,13 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 class Dog(Base):
-    pass
+    '''contains model "Dog" with name and breed attributes.'''
+
+    # create class attributes
+    __tablename__ = "dogs"
+    __table_args__ = (PrimaryKeyConstraint("id"), )
+    
+    # create columns
+    id = Column(Integer())
+    name = Column(String())
+    breed = Column(String())
